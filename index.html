@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Warranty Card</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Digital Warranty Card</h1>
+    <p>Manage all your product warranties in one place</p>
+</header>
+
+<nav>
+    <button onclick="showPage('home')">Home</button>
+    <button onclick="showPage('warranties')">My Warranties</button>
+    <button onclick="showPage('add')">Add Warranty</button>
+    <button onclick="showPage('about')">About Project</button>
+    <button onclick="logout()">Logout</button>
+</button>
+</nav>
+
+<main>
+    <section id="login" class="page">
+        <div class="card">
+            <h2>Login / Register</h2>
+            <form onsubmit="login(event)">
+                <input type="text" id="username"
+                       placeholder="Enter your name" required>
+                <input type="password" id="password"
+                       placeholder="Enter password" required>
+                <button type="submit">Login</button>
+            </form>
+            <p id="loginMessage"></p>
+        </div>
+    </section>
+
+    <section id="home" class="page hidden">
+        <h2>Welcome to Your Warranty Wallet!</h2>
+        <p>Keep your product warranty details safe and organized.</p>
+
+        <div class="stats">
+            <div class="card">
+                <h3>Total Warranties</h3>
+                <p id="totalCount">0</p>
+            </div>
+            <div class="card">
+                <h3>Active Warranties</h3>
+                <p id="activeCount">0</p>
+            </div>
+            <div class="card">
+                <h3>Expired Warranties</h3>
+                <p id="expiredCount">0</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="warranties" class="page hidden">
+        <h2>My Warranties</h2>
+
+        <input type="text" id="search"
+               placeholder="Search product..."
+               oninput="displayWarranties()">
+
+        <select id="filter" onchange="displayWarranties()">
+            <option value="all">All Warranties</option>
+            <option value="active">Active</option>
+            <option value="expired">Expired</option>
+        </select>
+
+        <div id="warrantyList"></div>
+    </section>
+
+    <section id="add" class="page hidden">
+        <div class="card">
+            <h2>Add New Warranty</h2>
+
+            <form onsubmit="addWarranty(event)">
+                <input type="text" id="product"
+                       placeholder="Product Name" required>
+
+                <input type="text" id="brand"
+                       placeholder="Brand Name" required>
+
+                <input type="text" id="serial"
+                       placeholder="Serial Number" required>
+
+                <input type="date" id="purchaseDate"
+                       required>
+
+                <select id="duration" required>
+                    <option value="">Select Warranty Duration</option>
+                    <option value="6">6 Months</option>
+                    <option value="12">1 Year</option>
+                    <option value="24">2 Years</option>
+                    <option value="36">3 Years</option>
+                    <option value="60">5 Years</option>
+                </select>
+
+                <input type="text" id="seller"
+                       placeholder="Shop / Seller Name" required>
+
+                <button type="submit">Save Warranty</button>
+            </form>
+
+            <p id="formMessage"></p>
+        </div>
+    </section>
+
+    <section id="about" class="page hidden">
+        <div class="card">
+            <h2>About Project</h2>
+            <p>
+                Digital Warranty Card is a web-based project
+                that helps users store and manage product warranty
+                information digitally.
+            </p>
+
+            <h3>Technologies Used</h3>
+            <ul>
+                <li>HTML - Website Structure</li>
+                <li>CSS - Website Design</li>
+                <li>JavaScript - Functionality</li>
+                <li>Local Storage - Saving Data in Browser</li>
+            </ul>
+
+            <h3>Features</h3>
+            <ul>
+                <li>Login screen</li>
+                <li>Add product warranty</li>
+                <li>View saved warranties</li>
+                <li>Search and filter warranties</li>
+                <li>Check active and expired warranties</li>
+            </ul>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>Digital Warranty Card </p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
