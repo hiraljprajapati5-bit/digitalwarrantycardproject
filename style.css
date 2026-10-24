@@ -1,29 +1,34 @@
+/* ===== Global Reset ===== */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+/* ===== Body ===== */
 body {
     font-family: Arial, sans-serif;
-    background: #f1efff;
-    color: #282344;
+    background: #f4f7fb;
+    color: #243247;
     line-height: 1.6;
 }
 
+/* ===== Header ===== */
 header {
-    background: linear-gradient(135deg, #4935a8, #8c5bd6);
-    color: white;
+    background: linear-gradient(135deg, #16324f, #245b78);
+    color: #ffffff;
     text-align: center;
     padding: 30px 15px;
 }
 
 header h1 {
     margin-bottom: 8px;
+    font-size: 30px;
 }
 
+/* ===== Navigation ===== */
 nav {
-    background: #30236f;
+    background: #102a43;
     padding: 12px;
     display: flex;
     justify-content: center;
@@ -31,24 +36,28 @@ nav {
     gap: 10px;
 }
 
+nav button {
+    background: #244966;
+    color: #ffffff;
+}
+
+/* ===== Buttons ===== */
 button {
-    background: #6d4bc3;
-    color: white;
+    background: #087e8b;
+    color: #ffffff;
     border: none;
     border-radius: 7px;
     padding: 11px 18px;
     cursor: pointer;
     font-size: 15px;
-}
-
-nav button {
-    background: #514091;
+    transition: background 0.3s ease;
 }
 
 button:hover {
-    background: #382577;
+    background: #066570;
 }
 
+/* ===== Main Content ===== */
 main {
     max-width: 1000px;
     margin: 30px auto;
@@ -56,20 +65,23 @@ main {
     min-height: 55vh;
 }
 
+/* ===== Headings & Paragraphs ===== */
 h2 {
     margin-bottom: 18px;
-    color: #4935a8;
+    color: #16324f;
 }
 
 p {
     margin-bottom: 12px;
 }
 
+/* ===== Common Cards ===== */
 .card {
-    background: white;
+    background: #ffffff;
     padding: 25px;
-    border-radius: 14px;
-    box-shadow: 0 4px 15px #30236f15;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 15px rgba(22, 50, 79, 0.07);
     margin-bottom: 20px;
 }
 
@@ -79,25 +91,38 @@ p {
     margin: 20px auto;
 }
 
-input, select {
+/* ===== Input Fields ===== */
+input,
+select {
     width: 100%;
     padding: 12px;
     margin: 9px 0;
-    border: 1px solid #d4cdec;
+    border: 1px solid #cbd5e1;
     border-radius: 7px;
     font-size: 15px;
-    background: white;
+    background: #ffffff;
+    color: #243247;
 }
 
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #087e8b;
+    box-shadow: 0 0 0 3px rgba(8, 126, 139, 0.12);
+}
+
+/* ===== Form Buttons ===== */
 form button {
     margin-top: 10px;
     width: 100%;
 }
 
+/* ===== Hide Sections ===== */
 .hidden {
     display: none !important;
 }
 
+/* ===== Dashboard Statistics ===== */
 .stats {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -107,35 +132,39 @@ form button {
 
 .stats .card {
     text-align: center;
-    border-top: 4px solid #7955cf;
+    border-top: 4px solid #087e8b;
 }
 
 .stats h3 {
     font-size: 17px;
+    color: #475569;
 }
 
 .stats p {
     font-size: 32px;
     font-weight: bold;
-    color: #6d4bc3;
+    color: #087e8b;
     margin-top: 10px;
 }
 
+/* ===== Warranty Cards ===== */
 .warranty-card {
-    background: white;
+    background: #ffffff;
     padding: 20px;
     margin: 15px 0;
-    border-left: 5px solid #7955cf;
+    border: 1px solid #e2e8f0;
+    border-left: 5px solid #087e8b;
     border-radius: 10px;
-    box-shadow: 0 3px 12px #30236f12;
+    box-shadow: 0 3px 12px rgba(22, 50, 79, 0.06);
     overflow-wrap: anywhere;
 }
 
 .warranty-card h3 {
-    color: #4935a8;
+    color: #16324f;
     margin-bottom: 10px;
 }
 
+/* ===== Warranty Status ===== */
 .status {
     display: inline-block;
     padding: 4px 10px;
@@ -145,28 +174,31 @@ form button {
 }
 
 .active {
-    color: #176b3a;
-    background: #d8f8e3;
+    color: #166534;
+    background: #dcfce7;
 }
 
 .expired {
-    color: #a32d35;
-    background: #ffe0e2;
+    color: #b91c1c;
+    background: #fee2e2;
 }
 
+/* ===== Footer ===== */
 footer {
     text-align: center;
-    background: #30236f;
-    color: white;
+    background: #102a43;
+    color: #ffffff;
     padding: 18px;
     margin-top: 30px;
 }
 
+/* ===== Lists ===== */
 ul {
     padding-left: 25px;
     margin-bottom: 18px;
 }
 
+/* ===== Mobile Responsive ===== */
 @media (max-width: 600px) {
     header h1 {
         font-size: 25px;
@@ -183,5 +215,8 @@ ul {
     .card {
         padding: 18px;
     }
-}
 
+    .stats {
+        grid-template-columns: 1fr;
+    }
+}
